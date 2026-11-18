@@ -1,4 +1,25 @@
-# PYQ — Assam recruitment exam question bank
+# Assam Exam PYQ: 2,398 previous-year questions with answers (ADRE, APSC, TET, Police)
+
+> 2,398 previous-year questions from 23 Assam recruitment papers (ADRE, APSC CCE, TET, Assam Police, DME), with answers, topic tags and source PDFs.
+
+**[Live site](https://axomrank.github.io/axomrank-blog/adre-previous-year-questions-analysis/)** · [Part of AxomRank](https://github.com/axomrank)
+
+## At a glance
+
+- **2,398 questions** from **23 papers** across six exams: ADRE 2022 and 2024, APSC CCE Prelims 2023–2025, Assam Police SI and Constable 2025, Assam TET 2021, DME 2025
+- **Every question has an answer.** The source is stated: official final key, official provisional key, or a worked solution with its reasoning
+- **Three-level topic tags** (subject → topic → subtopic) for analysis and practice sets
+- **Start with [`questions.csv`](questions.csv).** Per-paper JSON files are the canonical data
+- Analysis built from this data: [ADRE](https://axomrank.github.io/axomrank-blog/adre-previous-year-questions-analysis/) and [APSC](https://axomrank.github.io/axomrank-blog/apsc-cce-prelims-previous-year-questions-analysis/)
+
+## Quick start
+
+```bash
+python scripts/taxonomy.py --check
+python -m unittest discover -s scripts -p 'test_*.py'
+```
+
+## Overview
 
 Previous-year question papers (PYQs) of Assam recruitment exams: the original PDFs
 plus machine-readable JSON/CSV. Every question has its four options, the answer
@@ -153,3 +174,32 @@ uv venv .venv && uv pip install -r scripts/requirements.txt
 
 OCR results are cached in `.ocr_cache/` (not committed); the first OCR run takes
 about 15 s per scanned page.
+
+## Roadmap: future improvements
+
+- [ ] Add more papers: ADRE 2025/2026, APSC 2026, Assam TET 2023+, Gauhati High Court, APDCL and DHS
+- [ ] Add Assamese versions of the questions, where the booklets print them
+- [ ] Add official keys for the 2022 ADRE papers if SLRC publishes them
+- [ ] Publish a JSON API (static files) for the app and the blog's per-paper pages
+- [ ] Choose a data license, and record the copyright status of the source booklets
+
+## For AI agents and contributors
+
+Read [AGENTS.md](AGENTS.md). Per-paper JSON is canonical. Never hand-edit `questions.csv`; regenerate it.
+
+Commit as the `axomrank` account. Keep changes small and reviewable, and run the repository's checks before pushing.
+
+## Part of AxomRank
+
+[AxomRank](https://axomrank.pages.dev) offers free, bilingual preparation for Assam government exams. Related repositories:
+
+- **Learn:** [axomrank.github.io](https://github.com/axomrank/axomrank.github.io) (the AxomRank learning app), [ahom-kings-lessons](https://github.com/axomrank/ahom-kings-lessons) (41 bilingual Ahom reign lessons), [floor-test-simulator](https://github.com/axomrank/floor-test-simulator) (parliamentary majority simulator)
+- **Explore Assam history:** [ahom-kingdom-history](https://github.com/axomrank/ahom-kingdom-history) (illustrated Ahom kingdom website), [assam-history-map](https://github.com/axomrank/assam-history-map) (year-by-year historical map), [assam-history-characters](https://github.com/axomrank/assam-history-characters) (character sheets for Assam's history), [assam-visual-archive](https://github.com/axomrank/assam-visual-archive) (gallery of Assam scenes and photographs), [assam-heritage-ai-art](https://github.com/axomrank/assam-heritage-ai-art) (AI art gallery of Assamese heritage)
+- **Open data:** [assam-exam-syllabus](https://github.com/axomrank/assam-exam-syllabus) (syllabi for 12 recruitment boards), [assam-maps](https://github.com/axomrank/assam-maps) (map portal and GIS layers), [assam-history-sources](https://github.com/axomrank/assam-history-sources) (Kamarupa inscriptions and primary sources)
+- **Publishing and brand:** [axomrank-blog](https://github.com/axomrank/axomrank-blog) (exam guides built from real papers), [assam-history-books](https://github.com/axomrank/assam-history-books) (13-book history of Assam), [axomrank-brand-assets](https://github.com/axomrank/axomrank-brand-assets) (brand kit and social media library)
+
+## License and contact
+
+No license file yet. Question booklets are published by the examining bodies. Answers marked `worked_solution` are AxomRank's own, not official.
+
+Corrections and questions: open an issue in this repository. AxomRank is run by Angsuman Das (sole proprietor).
